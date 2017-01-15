@@ -3,8 +3,8 @@ import http from 'http';
 import http2 from 'http2';
 
 const PORT = {
-    http: 8000,
-    http2: 8001,
+    http: 80,
+    http2: 443,
 };
 const options = {
     cert: fs.readFileSync('./cert.pem'),
@@ -12,11 +12,11 @@ const options = {
 };
 
 const router = (type, req, res) => {
-    res.end(`You are connected to: ${type}\nYou hit: ${req.url}`);
+    res.end(`You are connected via ${type}\nYou hit: ${req.url}`);
 };
-
-http2.createServer(options, router.bind(null, 'http2'))
-     .listen(PORT.http2);
 
 http.createServer(router.bind(null, 'http'))
     .listen(PORT.http);
+
+http2.createServer(options, router.bind(null, 'http2'))
+     .listen(PORT.http2);
