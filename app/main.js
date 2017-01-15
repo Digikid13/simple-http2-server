@@ -7,8 +7,8 @@ const PORT = {
     http2: 443,
 };
 const options = {
-    cert: fs.readFileSync('./cert.pem'),
-    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./certs/cert.pem'),
+    key: fs.readFileSync('./certs/key.pem'),
 };
 
 const router = (type, req, res) => {
