@@ -8,12 +8,12 @@ gulp.task('server', ['serve']);
 gulp.task('build', () =>
     gulp.src('app/**/*.js')
         .pipe(babel())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('build'))
 );
 
 gulp.task('serve', ['build'], () => {
     nodemon({
-        script: 'dist/main.js',
+        script: 'build/main.js',
         watch: 'app',
         tasks: ['build'],
     });

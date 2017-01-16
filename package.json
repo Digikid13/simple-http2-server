@@ -1,7 +1,7 @@
 {
   "name": "simple-http2-server",
   "version": "0.1.0",
-  "description": "Simple Node server w/ HTTP/2, Gulp, Bable, and ESLint",
+  "description": "Simple Node server w/ HTTP/2, Gulp, Babel, and ESLint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Digikid13/simple-http2-server.git"
